@@ -1,0 +1,114 @@
+@import "variables";
+@import "mixins";
+
+.card {
+  margin: 0 auto;
+  padding: 0 1rem;
+  max-width: 30rem;
+
+  &__box {
+    border-radius: 6px;
+    overflow: hidden;
+    background-color: $dark-desaturated-blue;
+  }
+
+  &__img_container {
+    position: relative;
+
+    &::before {
+      content: "";
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 10;
+      background-color: rgba($soft-violet, 0.4);
+    }
+  }
+
+  &__bg {
+    width: 100%;
+    height: 100%;
+  }
+
+  &__wrapped {
+    @include columnSpace(3rem);
+    text-align: center;
+    padding: 3.2rem 2rem;
+  }
+
+  &__content {
+    @include columnSpace(1.6rem);
+  }
+
+  &__title {
+    font-size: 2.4rem;
+
+    &_light {
+      color: $soft-violet;
+    }
+  }
+
+  &__description {
+    color: $slightly-white;
+    font-size: 1.4rem;
+    line-height: 1.5;
+  }
+
+  &__highlights {
+    @include columnSpace(2.4rem);
+    list-style: none;
+
+    li {
+      @include columnSpace(0.4rem);
+
+      .main {
+        color: $white;
+        font-size: 1.8rem;
+        font-weight: bold;
+      }
+
+      .sub {
+        font-family: "Lexend Deca", sans-serif;
+        font-weight: 400;
+        color: $slightly-white-darker;
+        font-size: 1.1rem;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+      }
+    }
+  }
+
+  @media (min-width: 50em) {
+    max-width: 86rem;
+    &__box {
+      display: grid;
+      grid-template-columns: 1.25fr 1fr;
+    }
+
+    &__wrapped {
+      order: 1;
+      text-align: left;
+      padding: 4rem;
+      gap: 5rem;
+    }
+
+    &__img_container {
+      order: 2;
+    }
+
+    &__title {
+      font-size: 3rem;
+    }
+
+    &__description {
+      font-size: 1.5rem;
+    }
+
+    &__highlights {
+      flex-direction: row;
+      gap: 5rem;
+    }
+  }
+}
