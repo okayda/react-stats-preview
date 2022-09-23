@@ -12,7 +12,7 @@ Users should be able to:
 
 ## Links
 
-- [Solution URL]()
+- [Solution URL](https://github.com/okayda/react-stats-preview.git)
 - [Live Site URL](https://jhon-okayda-stats-preview-component.netlify.app/)
 
 ## Built with
